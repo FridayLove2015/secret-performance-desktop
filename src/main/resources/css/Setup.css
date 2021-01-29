@@ -1,0 +1,108 @@
+.root{
+    -fx-background-color: rgb(0, 0, 0);
+    -fx-fill: null;
+}
+
+
+.scroll-pane{
+    -fx-fit-to-width: true;
+    -fx-fit-to-height: true;
+}
+
+.scroll-pane .viewport{
+    -fx-background-color: #000000;
+}
+
+.ScrollPane{
+    -fx-background-color: rgb(0, 0, 0);
+    -fx-fill: null;
+    -fx-text-alignment: center;
+}
+
+
+/*按钮样式*/
+.button {
+    -fx-background-color: darkturquoise;
+    -fx-text-fill: white;
+}
+
+.button:hover {
+    -fx-background-color: lightskyblue;
+}
+
+/*颜色选择器样式*/
+.color-picker{
+    -fx-background-color: darkturquoise;
+    -fx-color-label-visible:true;
+}
+
+.color-picker .label{
+    -fx-text-fill: white;
+    -fx-font-size: 10px;
+}
+
+
+/*#themeLabel,#logoOpacityLabel,#dragLabel,#layoutLabel{*/
+/*    -fx-text-fill: #ffffff;*/
+/*    -fx-font-size: 14;*/
+/*    !*-fx-font-weight: bold;*!*/
+/*}*/
+
+.label{
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 14;
+}
+
+/*滑块样式*/
+.slider{
+    -fx-show-tick-labels: true;
+}
+
+.slider .track{
+    -progress : 0.2;
+    -fx-background-color: linear-gradient(to right, #00CED1, #00CED1 );
+
+}
+
+.slider .axis{
+    -fx-tick-label-fill: #fff;
+}
+
+.check-box{
+}
+
+.check-box:determinate .box{
+    -fx-background-color: #00CED1;
+}
+
+.check-box:selected .mark{
+    -fx-background-color: #fff;
+}
+
+/*radio样式*/
+.radio-button{
+    -fx-text-fill: #fff;
+}
+
+.radio-button .radio{
+    -fx-background-color: #00CED1;
+}
+
+/*choice样式*/
+.choice-box{
+    /*-fx-fill: #00CED1;*/
+    -fx-background-color: #00CED1;
+}
+
+/*.choice-box .open-button {*/
+/*    -fx-fill: #00CED1;*/
+/*    -fx-text-fill: #000;*/
+/*    -fx-background-color: #00CED1;*/
+/*}*/
+
+.choice-box .context-menu{
+    -fx-background-color: #00CED1;
+}
+.choice-box .open-button .arrow {
+    -fx-background-color: white;
+}

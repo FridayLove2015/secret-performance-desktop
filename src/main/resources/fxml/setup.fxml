@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.collections.FXCollections?>
+<GridPane fx:id="rootGridPane" fx:controller="cn.chenc.performs.controller.SetupController"
+          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
+    <ScrollPane fx:id="scrollPane" >
+        <GridPane alignment="CENTER" >
+            <VBox>
+                <Label text="主面板设置" minHeight="30" ></Label>
+                <HBox minHeight="30">
+                    <Label  text="显示主面板" minWidth="100" alignment="CENTER" ></Label>
+                    <AnchorPane minWidth="130"></AnchorPane>
+                    <CheckBox fx:id="mainPane" prefWidth="5" onAction="#openMainPane"  alignment="CENTER_RIGHT"></CheckBox>
+                </HBox>
+                <HBox minHeight="30">
+                    <Label  text="显示logo" minWidth="100" alignment="CENTER" ></Label>
+                    <AnchorPane minWidth="130"></AnchorPane>
+                    <CheckBox fx:id="logoDisplay" prefWidth="5" onAction="#openLogoDisplay"  alignment="CENTER_RIGHT"></CheckBox>
+                </HBox>
+                <HBox minHeight="30">
+                    <Label  text="显示系统信息" minWidth="100" alignment="CENTER" ></Label>
+                    <AnchorPane minWidth="130"></AnchorPane>
+                    <CheckBox fx:id="systemInfoDisplay" prefWidth="5" onAction="#openSystemInfoDisplay"  alignment="CENTER_RIGHT"></CheckBox>
+                </HBox>
+                <HBox minHeight="30">
+                    <Label  text="显示cpu信息" minWidth="100" alignment="CENTER" ></Label>
+                    <AnchorPane minWidth="130"></AnchorPane>
+                    <CheckBox fx:id="cpuInfoDisplay" prefWidth="5" onAction="#openCpuInfoDisplay"  alignment="CENTER_RIGHT"></CheckBox>
+                </HBox>
+                <HBox minHeight="30">
+                    <Label  text="显示内存信息" minWidth="100" alignment="CENTER" ></Label>
+                    <AnchorPane minWidth="130"></AnchorPane>
+                    <CheckBox fx:id="ramInfoDisplay" prefWidth="5" onAction="#openRamInfoDisplay"  alignment="CENTER_RIGHT"></CheckBox>
+                </HBox>
+                <HBox minHeight="30" >
+                    <Button fx:id="checkLogo" id="checkLogo" onAction="#checkLogoAction" text="logo图片" minWidth="100"></Button>
+                    <TextField fx:id="logoPath" minWidth="150" maxWidth="150" prefWidth="30" disable="true"></TextField>
+                    <Button fx:id="resetLogo" id="checkLogo" onAction="#resetLogoAction" text="清空" minWidth="40"></Button>
+                </HBox>
+                <HBox minHeight="30">
+                    <Label fx:id="logoOpacityLabel" text="logo透明度" minWidth="100" alignment="CENTER" ></Label>
+                    <Slider fx:id="logoOpacitySlider" min="0" max="1" blockIncrement="0.1" minWidth="150"></Slider>
+                </HBox>
+                <HBox minHeight="30">
+                    <Label fx:id="themeLabel" text="主题色" minWidth="100" alignment="CENTER" ></Label>
+                   <ColorPicker fx:id="themeChoose" onAction="#themeChooseAction" minWidth="150" maxWidth="200"></ColorPicker>
+                </HBox>
+                <HBox minHeight="30">
+                    <Label fx:id="dragLabel" text="开启拖拽" minWidth="100" alignment="CENTER" ></Label>
+                    <AnchorPane minWidth="130"></AnchorPane>
+                    <CheckBox fx:id="dragCheckBox" prefWidth="5"  alignment="CENTER_RIGHT"></CheckBox>
+                    <Button fx:id="resetDrag" id="checkLogo" onAction="#resetDragAction" text="默认位置" minWidth="40"  alignment="CENTER_RIGHT"></Button>
+                </HBox>
+                <HBox minHeight="30">
+                    <Label fx:id="layoutLabel" text="布局样式" minWidth="100" alignment="CENTER" ></Label>
+                    <fx:define>
+                        <ToggleGroup fx:id="layoutToggleGroup" />
+                    </fx:define>
+                    <RadioButton fx:id="layoutRadio1" text="纵向" prefWidth="100" toggleGroup="$layoutToggleGroup" ></RadioButton>
+                    <RadioButton fx:id="layoutRadio2" text="横向" toggleGroup="$layoutToggleGroup" ></RadioButton>
+                </HBox>
+                <Label text="时钟设置"></Label>
+                <HBox minHeight="30">
+                    <Label fx:id="clockOpenLabel" text="开启时钟" minWidth="100" alignment="CENTER" ></Label>
+                    <AnchorPane minWidth="130"></AnchorPane>
+                    <CheckBox fx:id="clockOpenCheckBox" prefWidth="5"  alignment="CENTER_RIGHT"></CheckBox>
+                </HBox>
+                <HBox minHeight="30">
+                    <Label fx:id="clockDragLabel" text="开启拖拽" minWidth="100" alignment="CENTER" ></Label>
+                    <AnchorPane minWidth="130"></AnchorPane>
+                    <CheckBox fx:id="clockDragCheckBox" prefWidth="5"  alignment="CENTER_RIGHT"></CheckBox>
+                </HBox>
+                <HBox minHeight="30">
+                    <Label fx:id="clockSizeLabel" text="时钟大小" minWidth="100" alignment="CENTER" ></Label>
+                    <Slider fx:id="clockSizeSlider" min="150" max="600" blockIncrement="1" minWidth="150"></Slider>
+                </HBox>
+                <HBox minHeight="30">
+                    <Label fx:id="clockBorderLabel" text="边框颜色" minWidth="100" alignment="CENTER" ></Label>
+                    <ColorPicker fx:id="clockBorderColor"  minWidth="150" maxWidth="200"></ColorPicker>
+                </HBox>
+                <HBox minHeight="30">
+                    <Label fx:id="clockBackgroundLabel" text="背景颜色" minWidth="100" alignment="CENTER" ></Label>
+                    <ColorPicker fx:id="clockBackgroundColor"  minWidth="150" maxWidth="200"></ColorPicker>
+                </HBox>
+                <HBox minHeight="30">
+                    <Label fx:id="clockBackgroundOpacityLabel" text="背景透明度" minWidth="100" alignment="CENTER" ></Label>
+                    <Slider fx:id="clockBackgroundOpacitySlider" min="0" max="1" blockIncrement="0.1" minWidth="150"></Slider>
+                </HBox>
+                <HBox minHeight="30">
+                    <Label fx:id="clockHourLabel" text="时针颜色" minWidth="100" alignment="CENTER" ></Label>
+                    <ColorPicker fx:id="clockHourColor"  minWidth="150" maxWidth="200"></ColorPicker>
+                </HBox>
+                <HBox minHeight="30">
+                    <Label fx:id="clockMinuteLabel" text="分针颜色" minWidth="100" alignment="CENTER" ></Label>
+                    <ColorPicker fx:id="clockMinuteColor"  minWidth="150" maxWidth="200"></ColorPicker>
+                </HBox>
+                <HBox minHeight="30">
+                    <Label fx:id="clockSecondLabel" text="秒针颜色" minWidth="100" alignment="CENTER" ></Label>
+                    <ColorPicker fx:id="clockSecondColor"  minWidth="150" maxWidth="200"></ColorPicker>
+                </HBox>
+                <HBox minHeight="30">
+                    <Label fx:id="clockTimeLabel" text="时间颜色" minWidth="100" alignment="CENTER" ></Label>
+                    <ColorPicker fx:id="clockTimeColor"  minWidth="150" maxWidth="200"></ColorPicker>
+                </HBox>
+                <Label text="动画设置"></Label>
+                <HBox minHeight="30">
+                    <Label fx:id="animationOpenLabel" text="开启动画" minWidth="100" alignment="CENTER" ></Label>
+                    <AnchorPane minWidth="130"></AnchorPane>
+                    <CheckBox fx:id="animationOpenCheckBox" prefWidth="5"  alignment="CENTER_RIGHT"></CheckBox>
+                </HBox>
+                <HBox minHeight="40">
+                    <Label fx:id="animationTypeLabel" text="动画类型" minWidth="100" alignment="CENTER" ></Label>
+                    <ChoiceBox fx:id="animationTypeChoiceBox" minWidth="150" maxWidth="150"  >
+                        <items>
+                            <FXCollections fx:factory="observableArrayList">
+
+                            </FXCollections>
+                        </items>
+                    </ChoiceBox>
+                </HBox>
+                <HBox minHeight="30">
+                    <Label fx:id="codeRainTextLabel" text="代码雨颜色" minWidth="100" alignment="CENTER" ></Label>
+                    <ColorPicker fx:id="codeRainTextColor"  minWidth="150" maxWidth="200"></ColorPicker>
+                </HBox>
+                <HBox minHeight="30">
+                    <Label text="动画帧数" minWidth="100" alignment="CENTER" ></Label>
+                    <Slider fx:id="animationFps" onMouseDragged="#animationFpsAction" onMouseClicked="#animationFpsAction" min="1" max="100" blockIncrement="1" minWidth="150"></Slider>
+                </HBox>
+                <Label text="动态壁纸"></Label>
+                <HBox minHeight="40">
+                    <Label text="壁纸类型" minWidth="100" alignment="CENTER" ></Label>
+                    <ChoiceBox fx:id="wallpaperTypeChoiceBox" onAction="#wallpaperTypeAction" minWidth="150" maxWidth="150"  >
+                        <items>
+                            <FXCollections fx:factory="observableArrayList">
+
+                            </FXCollections>
+                        </items>
+                    </ChoiceBox>
+                </HBox>
+                <VBox fx:id="mediaBox" >
+                    <HBox minHeight="30" >
+                        <Button onAction="#checkMediaAction" text="选择壁纸" minWidth="100"></Button>
+                        <TextField fx:id="mediaPath" minWidth="150" maxWidth="150" prefWidth="30" disable="true"></TextField>
+                        <Button fx:id="resetMedia" onAction="#resetMediaAction" text="清空" minWidth="40"></Button>
+                    </HBox>
+                    <HBox minHeight="30">
+                        <Label text="视频帧数" minWidth="100" alignment="CENTER" ></Label>
+                        <Slider fx:id="mediaFps" onMouseDragged="#mediaFpsAction" onMouseClicked="#mediaFpsAction" min="1" max="100" blockIncrement="1" minWidth="150"></Slider>
+                    </HBox>
+                </VBox>
+                <HBox fx:id="webHBox" minHeight="30" >
+                    <Button onAction="#checkWebAction" text="选择壁纸" minWidth="100"></Button>
+                    <TextField fx:id="webPath" minWidth="150" maxWidth="150" prefWidth="30" disable="true"></TextField>
+                    <Button fx:id="resetWeb" onAction="#resetWebAction" text="清空" minWidth="40"></Button>
+                </HBox>
+                <HBox minHeight="50" alignment="CENTER_LEFT">
+                    <Button fx:id="resetConfig" onAction="#resetConfigAction" text="重置" minWidth="100"></Button>
+                </HBox>
+            </VBox>
+        </GridPane>
+    </ScrollPane>
+</GridPane>
